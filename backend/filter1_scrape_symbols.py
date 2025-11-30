@@ -127,7 +127,7 @@ def get_symbols(limit: int = 1000, batch_pages: int = 8, max_pages: int = 100) -
     print(f"Final valid symbols: {len(final_symbols)} (limit was {limit})")
 
     df = pd.DataFrame(final_symbols[:limit], columns=["symbol"])
-    df.to_csv("Program\symbols.csv", index=False)
+    df.to_csv("Program/symbols.csv", index=False)
     print("Filter 1 output → symbols.csv")
 
     return df
