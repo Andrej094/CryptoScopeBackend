@@ -3,9 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import sqlite3
 import pandas as pd
 
-from filter1_scrape_symbols import get_symbols
-from filter2_check_existing_data import get_existing_status
-from filter3_download_missing import update_data
+from .filter1_scrape_symbols import get_symbols
+from .filter2_check_existing_data import get_existing_status
+from .filter3_download_missing import update_data
 
 DB_PATH = "Program/crypto.db"
 SYMBOLS_CSV = "Program/symbols.csv"
@@ -151,3 +151,4 @@ def api_run_etl():
     get_existing_status()
     update_data()
     return {"status": "completed"}
+
